@@ -1,0 +1,7 @@
+.Sticky {
+    background-color: yellow;
+    width: 200px;
+    height: 200px;
+    border-top: 30px rgba(0, 0, 0, .1) solid;
+    padding: 8px 8px 0px 8px;
+}

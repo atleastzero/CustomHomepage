@@ -6,8 +6,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Corkboard>
-        </Corkboard>
+        <Corkboard />
       </div>
     );
   }

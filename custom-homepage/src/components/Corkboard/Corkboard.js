@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Aux from '../../hoc/Aux'
+import Sticky from '../Widgets/Sticky/Sticky'
 
 import classes from './Corkboard.css'
 
@@ -12,7 +12,7 @@ const corkboard = props => (
             <li>Link to landing page</li>
         </ul>
         <main>
-            {props.children}
+            <Sticky />
         </main>
     </div>
 );
