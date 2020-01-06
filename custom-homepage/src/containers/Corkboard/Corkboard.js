@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Sticky from '../../components/Widgets/Sticky/Sticky'
+import StickyCount from '../../components/BuildControls/Counters/StickyCount'
 
 import classes from './Corkboard.css'
 
-class Corkboard { 
+class Corkboard extends Component { 
     state = {
         stickies: 1
     }
@@ -18,6 +19,7 @@ class Corkboard {
                     <li>Link to landing page</li>
                 </ul>
                 <main>
+                    <StickyCount />
                     <Sticky />
                 </main>
             </div>
@@ -25,4 +27,4 @@ class Corkboard {
     }
 }
 
-export default corkboard;
+export default Corkboard;
