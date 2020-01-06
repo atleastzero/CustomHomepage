@@ -1,0 +1,12 @@
+body {
+    border: 3vh rgb(61, 27, 2) solid;
+    height: 94vh;
+    background-color: rgb(158, 123, 71);
+    background-image:
+    radial-gradient(black, brown 1px, transparent 2px),
+    radial-gradient(brown, black 1px, transparent 2px),
+    radial-gradient(black , darkorange 1px, transparent 2px),
+    radial-gradient(darkorange, black 1px, transparent 2px);
+    background-size: 46px 46px, 67px 67px, 70px 70px, 80px 80px; 
+    background-position: 0 0, 40px 14px, 130px 20px, 70px 100px;
+}

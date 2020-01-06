@@ -2,8 +2,10 @@ import React from 'react';
 
 import Aux from '../../hoc/Aux'
 
+import classes from './Corkboard.css'
+
 const corkboard = props => (
-    <Aux>
+    <div className={classes.Corkboard}>
         <ul>
             <li>Dropdown</li>
             <li>Searchbar</li>
@@ -12,7 +14,7 @@ const corkboard = props => (
         <main>
             {props.children}
         </main>
-    </Aux>
+    </div>
 );
 
 export default corkboard;
