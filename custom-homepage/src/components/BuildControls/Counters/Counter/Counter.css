@@ -1,0 +1,38 @@
+
+.BuildControl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.BuildControl button {
+    padding: 5px;
+    border: 1px solid black;
+    outline: none;
+    color: white;
+}
+
+.BuildControl button:disabled {
+    background-color: gray;
+    color: black;
+}
+
+.BuildControl button:hover:disabled {
+    cursor: not-allowed;
+}
+
+.BuildControl .Less {  
+    background-color: pink;
+}
+
+.BuildControl .More {
+    background-color: lightblue;
+}
+
+.BuildControl .Less:hover, .BuildControl .Less:active {  
+    background-color: blue;
+}
+
+.BuildControl .More:hover,.BuildControl .More:active {
+    background-color: red;
+}

@@ -4,7 +4,6 @@ import classes from './Counter.css';
 
 const buildControl = props => (
     <div className={classes.Counter}>
-        <div>{props.label}</div>
         <button 
             className={classes.Less} 
             onClick={props.removed}

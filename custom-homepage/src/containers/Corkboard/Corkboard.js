@@ -7,7 +7,40 @@ import classes from './Corkboard.css'
 
 class Corkboard extends Component { 
     state = {
-        stickies: 1
+        widgets: {
+            "Sticky" : {
+                count : 1,
+                disabled : false
+            }
+        }
+    }
+
+    addWidgetHandler = type => {
+        const newCount = this.state.widgets[type].count + 1;
+
+        const updatedWidgets = {
+            ...this.state.widgets
+        };
+        updatedWidgets[type].count = newCount;
+        updatedWidgets[type].disabled = false;
+
+        this.setState({widgets: updatedWidgets});
+    }
+
+    removeWidgetHandler = type => {
+        const newCount = this.state.widgets[type].count - 1;
+
+        const updatedWidgets = {
+            ...this.state.widgets
+        };
+        updatedWidgets[type].count = newCount;
+        if (newCount === 0) {
+            updatedWidgets[type].disabled = true
+        } else {
+        updatedWidgets[type].disabled = false;
+        }
+
+        this.setState({widgets: updatedWidgets});
     }
 
     render() {
@@ -19,7 +52,11 @@ class Corkboard extends Component {
                     <li>Link to landing page</li>
                 </ul>
                 <main>
-                    <StickyCount />
+                    <StickyCount
+                        addCount={this.addWidgetHandler}
+                        minusCount={this.removeWidgetHandler}
+                        disabled={this.state.widgets["Sticky"].disabled}
+                    />
                     <Sticky />
                 </main>
             </div>
