@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import Sticky from '../../components/Widgets/Sticky/Sticky'
 import StickyCount from '../../components/BuildControls/Counters/StickyCount'
 
 import classes from './Corkboard.css'
@@ -53,11 +52,11 @@ class Corkboard extends Component {
                 </ul>
                 <main>
                     <StickyCount
+                        count={this.state.widgets["Sticky"].count}
                         addCount={this.addWidgetHandler}
                         minusCount={this.removeWidgetHandler}
                         disabled={this.state.widgets["Sticky"].disabled}
                     />
-                    <Sticky />
                 </main>
             </div>
         );
