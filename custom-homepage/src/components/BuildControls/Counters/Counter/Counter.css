@@ -1,38 +1,38 @@
 
-.BuildControl {
+.Counter {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.BuildControl button {
+.Counter button {
+    margin: 3px;
     padding: 5px;
     border: 1px solid black;
     outline: none;
     color: white;
 }
 
-.BuildControl button:disabled {
+.Counter button:disabled, .Counter .Less:hover:disabled {
     background-color: gray;
     color: black;
 }
 
-.BuildControl button:hover:disabled {
+.Counter button:hover:disabled, .Counter .Less:hover:disabled {
     cursor: not-allowed;
 }
 
-.BuildControl .Less {  
-    background-color: pink;
-}
-
-.BuildControl .More {
+.Counter .Less {  
     background-color: lightblue;
 }
 
-.BuildControl .Less:hover, .BuildControl .Less:active {  
+.Counter .More {
+    background-color: pink;
+}
+
+.Counter .Less:hover, .Counter .Less:active {  
     background-color: blue;
 }
 
-.BuildControl .More:hover,.BuildControl .More:active {
+.Counter .More:hover,.Counter .More:active {
     background-color: red;
 }
