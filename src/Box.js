@@ -6,9 +6,9 @@ const styles = {
   padding: '0.5rem 1rem',
   cursor: 'move',
 }
-const Box = ({ title, yellow }) => {
+const Box = ({ content, yellow }) => {
   const backgroundColor = yellow ? 'yellow' : 'white'
-  return <div style={{ ...styles, backgroundColor }}>{title}</div>
+  return <div style={{ ...styles, backgroundColor }}>{content}</div>
 }
 export default Box
 

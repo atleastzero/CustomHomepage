@@ -16,9 +16,12 @@ function getStyles(left, top, isDragging) {
   }
 }
 const DraggableBox = props => {
-  const { id, title, left, top } = props
+  const id = props.id
+  const left = props.left
+  const top = props.top
+
   const [{ isDragging }, drag, preview] = useDrag({
-    item: { type: ItemTypes.BOX, id, left, top, title },
+    item: { type: ItemTypes.BOX, id, left, top },
     collect: monitor => ({
       isDragging: monitor.isDragging(),
     }),
@@ -28,7 +31,7 @@ const DraggableBox = props => {
   }, [])
   return (
     <div ref={drag} style={getStyles(left, top, isDragging)}>
-      <Box title={title} />
+      <Box content={props.children} /> 
     </div>
   )
 }

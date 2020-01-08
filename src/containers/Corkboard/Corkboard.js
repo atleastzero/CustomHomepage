@@ -1,12 +1,13 @@
 import React, { useState, useCallback } from 'react';
-import { useDrop } from 'react-dnd'
-import update from 'immutability-helper'
+import { useDrop } from 'react-dnd';
+import update from 'immutability-helper';
 
-import StickyCount from '../../components/BuildControls/Counters/StickyCount'
-import DraggableBox from '../../components/Draggable/DraggableBox'
-import ItemTypes from '../../ItemTypes'
+import StickyCount from '../../components/BuildControls/Counters/StickyCount';
+import Sticky from '../../components/Widgets/Sticky/Sticky';
+import DraggableBox from '../../components/Draggable/DraggableBox';
+import ItemTypes from '../../ItemTypes';
 
-import classes from './Corkboard.css'
+import classes from './Corkboard.css';
 
 let widgets = {
     "Sticky" : {
@@ -16,24 +17,31 @@ let widgets = {
 }
 
 const renderBox = (item, key) => {
-    return <DraggableBox key={key} id={key} {...item} />
+  return <DraggableBox key={key} id={key} {...item}>
+      </DraggableBox>
 }
 
-const addWidgetHandler = type => {
-    widgets[type].count += 1;
+// const renderSticky = (item, key) => {
+//   return <DraggableBox key={key} id={key} left={0} top={0}>
+//         <Sticky />
+//       </DraggableBox>
+// }
 
-    widgets[type].disabled = false;
-}
+// const addWidgetHandler = type => {
+//     widgets[type].count += 1;
 
-const removeWidgetHandler = type => {
-    const newCount = this.state.widgets[type].count - 1;
+//     widgets[type].disabled = false;
+// }
 
-    if (newCount === 0) {
-        widgets[type].disabled = true
-    } else {
-        widgets[type].disabled = false;
-    }
-}
+// const removeWidgetHandler = type => {
+//     const newCount = this.state.widgets[type].count - 1;
+
+//     if (newCount === 0) {
+//         widgets[type].disabled = true
+//     } else {
+//         widgets[type].disabled = false;
+//     }
+// }
 
 const styles = {
   width: "100vw",
@@ -41,10 +49,11 @@ const styles = {
 }
 
 const Corkboard = () => { 
-    const [boxes, setBoxes] = useState({
-        a: { top: 20, left: 80, title: 'Drag me around' },
-        b: { top: 180, left: 20, title: 'Drag me too' },
-    })
+  const [boxes, setBoxes] = useState({
+      a: { top: 20, left: 80},
+      b: { top: 180, left: 20},
+      sticky : { top: 200, left: 500, children: <Sticky /> }
+  })
     
     const moveBox = useCallback(
       (id, left, top) => {
@@ -80,62 +89,16 @@ const Corkboard = () => {
                 <li>Link to landing page</li>
             </ul>
             <main>
-                <StickyCount
+                {/* <StickyCount
                     count={widgets["Sticky"].count}
                     addCount={addWidgetHandler}
                     minusCount={removeWidgetHandler}
                     disabled={widgets["Sticky"].disabled}
-                />
+                    render={renderSticky}
+                /> */}
             </main>
         </div>
     );
 }
 
 export default Corkboard;
-
-// const styles = {
-//   width: 300,
-//   height: 300,
-//   border: '1px solid black',
-//   position: 'relative',
-// }
-// function renderBox(item, key) {
-//   return <DraggableBox key={key} id={key} {...item} />
-// }
-// const Container = ({ snapToGrid }) => {
-//   const [boxes, setBoxes] = useState({
-//     a: { top: 20, left: 80, title: 'Drag me around' },
-//     b: { top: 180, left: 20, title: 'Drag me too' },
-//   })
-//   const moveBox = useCallback(
-//     (id, left, top) => {
-//       setBoxes(
-//         update(boxes, {
-//           [id]: {
-//             $merge: { left, top },
-//           },
-//         }),
-//       )
-//     },
-//     [boxes],
-//   )
-//   const [, drop] = useDrop({
-//     accept: ItemTypes.BOX,
-//     drop(item, monitor) {
-//       const delta = monitor.getDifferenceFromInitialOffset()
-//       let left = Math.round(item.left + delta.x)
-//       let top = Math.round(item.top + delta.y)
-//       if (snapToGrid) {
-//         ;[left, top] = doSnapToGrid(left, top)
-//       }
-//       moveBox(item.id, left, top)
-//       return undefined
-//     },
-//   })
-//   return (
-//     <div ref={drop} style={styles}>
-//       {Object.keys(boxes).map(key => renderBox(boxes[key], key))}
-//     </div>
-//   )
-// }
-// export default Container
