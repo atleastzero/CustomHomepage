@@ -36,10 +36,8 @@ const removeWidgetHandler = type => {
 }
 
 const styles = {
-  width: 300,
-  height: 300,
-  border: '1px solid black',
-  position: 'relative',
+  width: "100vw",
+  height: "100vh"
 }
 
 const Corkboard = () => { 
@@ -74,7 +72,7 @@ const Corkboard = () => {
 
 
     return (
-        <div className={classes.Corkboard}>
+        <div className={classes.Corkboard} style={styles} ref={drop}>
             {Object.keys(boxes).map(key => renderBox(boxes[key], key))}
             <ul>
                 <li>Dropdown</li>
