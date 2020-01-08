@@ -9,12 +9,12 @@ import ItemTypes from '../../ItemTypes';
 
 import classes from './Corkboard.css';
 
-let widgets = {
-    "Sticky" : {
-        count : 1,
-        disabled : false
-    }
-}
+// let widgets = {
+//     "Sticky" : {
+//         count : 1,
+//         disabled : false
+//     }
+// }
 
 const renderBox = (item, key) => {
   return <DraggableBox key={key} id={key} {...item}>

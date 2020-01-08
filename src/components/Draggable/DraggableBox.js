@@ -3,6 +3,7 @@ import { useDrag } from 'react-dnd'
 import ItemTypes from '../../ItemTypes'
 import { getEmptyImage } from 'react-dnd-html5-backend'
 import Box from '../../Box'
+
 function getStyles(left, top, isDragging) {
   const transform = `translate3d(${left}px, ${top}px, 0)`
   return {
@@ -26,9 +27,9 @@ const DraggableBox = props => {
       isDragging: monitor.isDragging(),
     }),
   })
-  useEffect(() => {
-    preview(getEmptyImage(), { captureDraggingState: true })
-  }, [])
+  // useEffect(() => {
+  //   preview(getEmptyImage(), { captureDraggingState: true })
+  // }, [])
   return (
     <div ref={drag} style={getStyles(left, top, isDragging)}>
       <Box content={props.children} /> 
