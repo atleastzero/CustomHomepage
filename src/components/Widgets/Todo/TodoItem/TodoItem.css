@@ -1,0 +1,11 @@
+.Strike {
+    text-decoration: line-through;
+}
+/* 
+.TodoItem {
+    background-color: beige;
+} */
+
+.Mouse {
+    cursor: pointer;
+}

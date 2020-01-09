@@ -2,10 +2,11 @@ import React, { useState, useCallback } from 'react';
 import { useDrop } from 'react-dnd';
 import update from 'immutability-helper';
 
-import StickyCount from '../../components/BuildControls/Counters/StickyCount';
+// import StickyCount from '../../components/BuildControls/Counters/StickyCount';
 import Sticky from '../../components/Widgets/Sticky/Sticky';
 import DraggableBox from '../../components/Draggable/DraggableBox';
 import ItemTypes from '../../ItemTypes';
+import TodoList from '../../components/Widgets/Todo/TodoList'
 
 import classes from './Corkboard.css';
 
@@ -52,7 +53,8 @@ const Corkboard = () => {
   const [boxes, setBoxes] = useState({
       a: { top: 20, left: 80},
       b: { top: 180, left: 20},
-      sticky : { top: 200, left: 500, children: <Sticky /> }
+      sticky : { top: 200, left: 500, children: <Sticky /> },
+      todo : { top: 200, left: 50, children: <TodoList /> }
   })
     
     const moveBox = useCallback(
