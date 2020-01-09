@@ -32,13 +32,23 @@ const movieCalendar = (
   <iframe title="movies" src="https://calendar.google.com/calendar/embed?src=pfutdblf1gi8jmfsvroh76f6jg%40group.calendar.google.com&ctz=America%2FLos_Angeles" style={movieStyles}></iframe>
 )
 
+const spotifyPlayer = (
+  <iframe title="music" src="https://open.spotify.com/embed/playlist/37i9dQZF1EtgIKeqbyrga8" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+)
+
+const eyeBleachView = (
+  <script src='https://redditjs.com/subreddit.js' data-subreddit='Eyebleach' data-subreddit-mode='grid' ></script>
+)
+
 const Corkboard = () => { 
   const [boxes, setBoxes] = useState({
       // a: { top: 20, left: 80},
       // b: { top: 180, left: 20},
       sticky : { top: 200, left: 500, children: <Sticky /> },
       todo : { top: 200, left: 50, children: <TodoList /> },
-      calendar: {top: 75, left: 800, children: movieCalendar}
+      calendar: {top: 75, left: 800, children: movieCalendar},
+      spotify: {top: 300, left: 600, children: spotifyPlayer},
+      reddit: {top: 600, left: 70, children: eyeBleachView}
   })
     
     const moveBox = useCallback(
