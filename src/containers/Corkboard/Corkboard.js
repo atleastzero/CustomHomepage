@@ -20,12 +20,25 @@ const styles = {
   height: "100vh"
 }
 
+const movieStyles = {
+  border: 0,
+  width: 800, 
+  height: 600, 
+  frameborder: 0, 
+  scrolling: "no"
+}
+
+const movieCalendar = (
+  <iframe title="movies" src="https://calendar.google.com/calendar/embed?src=pfutdblf1gi8jmfsvroh76f6jg%40group.calendar.google.com&ctz=America%2FLos_Angeles" style={movieStyles}></iframe>
+)
+
 const Corkboard = () => { 
   const [boxes, setBoxes] = useState({
-      a: { top: 20, left: 80},
-      b: { top: 180, left: 20},
+      // a: { top: 20, left: 80},
+      // b: { top: 180, left: 20},
       sticky : { top: 200, left: 500, children: <Sticky /> },
-      todo : { top: 200, left: 50, children: <TodoList /> }
+      todo : { top: 200, left: 50, children: <TodoList /> },
+      calendar: {top: 75, left: 800, children: movieCalendar}
   })
     
     const moveBox = useCallback(
