@@ -10,39 +10,10 @@ import TodoList from '../../components/Widgets/Todo/TodoList'
 
 import classes from './Corkboard.css';
 
-// let widgets = {
-//     "Sticky" : {
-//         count : 1,
-//         disabled : false
-//     }
-// }
-
 const renderBox = (item, key) => {
   return <DraggableBox key={key} id={key} {...item}>
       </DraggableBox>
 }
-
-// const renderSticky = (item, key) => {
-//   return <DraggableBox key={key} id={key} left={0} top={0}>
-//         <Sticky />
-//       </DraggableBox>
-// }
-
-// const addWidgetHandler = type => {
-//     widgets[type].count += 1;
-
-//     widgets[type].disabled = false;
-// }
-
-// const removeWidgetHandler = type => {
-//     const newCount = this.state.widgets[type].count - 1;
-
-//     if (newCount === 0) {
-//         widgets[type].disabled = true
-//     } else {
-//         widgets[type].disabled = false;
-//     }
-// }
 
 const styles = {
   width: "100vw",
@@ -90,15 +61,6 @@ const Corkboard = () => {
                 <li>Searchbar</li>
                 <li>Link to landing page</li>
             </ul>
-            <main>
-                {/* <StickyCount
-                    count={widgets["Sticky"].count}
-                    addCount={addWidgetHandler}
-                    minusCount={removeWidgetHandler}
-                    disabled={widgets["Sticky"].disabled}
-                    render={renderSticky}
-                /> */}
-            </main>
         </div>
     );
 }

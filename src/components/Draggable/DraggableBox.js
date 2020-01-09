@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDrag } from 'react-dnd'
 import ItemTypes from '../../ItemTypes'
-import { getEmptyImage } from 'react-dnd-html5-backend'
 import Box from '../../Box'
 
 function getStyles(left, top, isDragging) {
@@ -21,7 +20,7 @@ const DraggableBox = props => {
   const left = props.left
   const top = props.top
 
-  const [{ isDragging }, drag, preview] = useDrag({
+  const [{ isDragging }, drag, ] = useDrag({
     item: { type: ItemTypes.BOX, id, left, top },
     collect: monitor => ({
       isDragging: monitor.isDragging(),
