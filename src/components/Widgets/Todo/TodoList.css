@@ -1,5 +1,39 @@
 .TodoList {
-    background: aqua;
+    min-width: 250px;
+    background: cyan;
     text-align: center;
     border: black solid 1px;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, .2);
+}
+
+.Title {
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.List {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Item {
+    height: 40px;
+    line-height: 40px;
+}
+
+.Item:nth-child(2n) {
+    background-color: darkcyan;
+}
+
+.Input {
+    background-color: darkcyan;
+    width: 100%;
+    padding: 13px 13px 13px 20px;
+    box-sizing: border-box;
+    border: 0;
+}
+
+.Input:focus {
+    outline: none;
 }
