@@ -33,11 +33,7 @@ const movieCalendar = (
 )
 
 const spotifyPlayer = (
-  <iframe title="music" src="https://open.spotify.com/embed/playlist/37i9dQZF1EtgIKeqbyrga8" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-)
-
-const eyeBleachView = (
-  <script src='https://redditjs.com/subreddit.js' data-subreddit='Eyebleach' data-subreddit-mode='grid' ></script>
+  <iframe title="music" src="https://open.spotify.com/embed/playlist/37i9dQZF1EtgIKeqbyrga8" width="300" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 )
 
 const Corkboard = () => { 
@@ -47,8 +43,7 @@ const Corkboard = () => {
       sticky : { top: 200, left: 500, children: <Sticky /> },
       todo : { top: 200, left: 50, children: <TodoList /> },
       calendar: {top: 75, left: 800, children: movieCalendar},
-      spotify: {top: 300, left: 600, children: spotifyPlayer},
-      reddit: {top: 600, left: 70, children: eyeBleachView}
+      spotify: {top: 300, left: 600, children: spotifyPlayer}
   })
     
     const moveBox = useCallback(
@@ -79,11 +74,6 @@ const Corkboard = () => {
     return (
         <div className={classes.Corkboard} style={styles} ref={drop}>
             {Object.keys(boxes).map(key => renderBox(boxes[key], key))}
-            <ul>
-                <li>Dropdown</li>
-                <li>Searchbar</li>
-                <li>Link to landing page</li>
-            </ul>
         </div>
     );
 }
