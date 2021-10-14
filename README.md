@@ -1,15 +1,6 @@
 # Custom Homepage
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-## Table of Contents
-- [Description](#description)
-- [Available Widgets](#available-widgets)
-- [Live](#live)
-
-## Description
-
-Custom Homepage is a corkboard and collection of drag and drop components.
+Custom Homepage is a corkboard and collection of drag and drop components. At Make School, we did intensive projects in between classes - think week long hackathons. This was my first project using React!
 
 ### Available Widgets
 
