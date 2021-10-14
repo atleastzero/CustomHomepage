@@ -1,6 +1,6 @@
 # Custom Homepage
 
-Custom Homepage is a corkboard and collection of drag and drop components. At Make School, we did intensive projects in between classes - think week long hackathons. This was my first project using React!
+Custom Homepage is a corkboard and collection of drag and drop components. At Make School, we did intensive projects in between classes - think week long hackathons. This was my first intensive project using React!
 
 ### Available Widgets
 
